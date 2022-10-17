@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".MainActivity">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/fragmentLesson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/yellow"
+        android:text="Fragment lesson"
+        android:padding="3dp"
+        android:textColor="@color/black"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/dataExtraLesson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:text="Прием данных из активити"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/fragmentLesson" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/checkbox"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:text="CheckBox"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/dataExtraLesson" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
