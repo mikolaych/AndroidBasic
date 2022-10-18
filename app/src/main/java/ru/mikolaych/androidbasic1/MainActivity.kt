@@ -1,4 +1,5 @@
 package ru.mikolaych.androidbasic1
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -25,6 +26,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.checkbox.setOnClickListener(this)
         binding.radiobutton.setOnClickListener(this)
         binding.slider.setOnClickListener(this)
+        binding.rangeSlider.setOnClickListener(this)
+
 
 
     }
@@ -56,7 +59,14 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
                 val startSlider = Intent(this, Slider::class.java)
                 startActivity(startSlider)
             }
+
+            R.id.rangeSlider -> {
+                val startRangeSlider = Intent(this, RangeSlider::class.java)
+                startActivity(startRangeSlider)
+            }
         }
     }
+
+
 
 }
