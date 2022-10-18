@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
 
 //Получение данных из ActivityDataExtra
         if (intent.getStringExtra("textButton").isNullOrBlank())
-            binding.dataExtraLesson.text = "Первый заход"
+            binding.dataExtraLesson.text = "Прием/передача данных из активити"
         else
             binding.dataExtraLesson.text = "${intent.getStringExtra("textButton")} (уже был тут)"
 
@@ -23,6 +23,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.fragmentLesson.setOnClickListener(this)
         binding.dataExtraLesson.setOnClickListener(this)
         binding.checkbox.setOnClickListener(this)
+        binding.radiobutton.setOnClickListener(this)
+        binding.slider.setOnClickListener(this)
+
 
     }
 
@@ -43,6 +46,15 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.checkbox -> {
                 val startCheckbox = Intent(this, CheckBox::class.java)
                 startActivity(startCheckbox)
+            }
+
+            R.id.radiobutton -> {
+                val startRButton = Intent(this, RadioButton::class.java)
+                startActivity(startRButton)
+            }
+            R.id.slider -> {
+                val startSlider = Intent(this, Slider::class.java)
+                startActivity(startSlider)
             }
         }
     }

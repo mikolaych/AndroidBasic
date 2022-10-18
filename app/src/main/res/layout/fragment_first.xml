@@ -36,6 +36,16 @@
             app:layout_constraintStart_toStartOf="@+id/text"
             app:layout_constraintTop_toBottomOf="@+id/text" />
 
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/prompt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="@color/yellow"
+            android:text="Prompt"
+            app:layout_constraintTop_toBottomOf="@+id/backButton" />
+
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

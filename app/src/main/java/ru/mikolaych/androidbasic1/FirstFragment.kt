@@ -25,7 +25,21 @@ class FirstFragment : Fragment() {
             (context as FragmentActivity).supportFragmentManager.beginTransaction().remove(this).commit()
         })
 
+        writePrompt()
+
+
         return binding.root
+    }
+
+    private fun writePrompt() {
+        binding.prompt.text = " //Вызов фрагмента FirstFragment в поле fragmentWindow\n" +
+                "        binding.startFragmentButton.setOnClickListener(View.OnClickListener {\n" +
+                "            supportFragmentManager.beginTransaction().add(R.id.fragmentWindow, FirstFragment()).commit()\n" +
+                "        })" +
+                " //Закрытие фрагмента(удалениеиз фрагментмнеджера)\n" +
+                "        binding.backButton.setOnClickListener(View.OnClickListener {\n" +
+                "            (context as FragmentActivity).supportFragmentManager.beginTransaction().remove(this).commit()\n" +
+                "        })"
     }
 
 

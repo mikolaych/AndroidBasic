@@ -8,6 +8,7 @@ import android.widget.CompoundButton
 import ru.mikolaych.androidbasic1.databinding.ActivityCheckBoxBinding
 
 var status = false
+//интерфейсы на OnClickListener и OnCheckedChangeListener
 class CheckBox : AppCompatActivity(), View.OnClickListener, CompoundButton.OnCheckedChangeListener {
     private lateinit var binding:ActivityCheckBoxBinding
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -15,12 +16,17 @@ class CheckBox : AppCompatActivity(), View.OnClickListener, CompoundButton.OnChe
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+        writePrompt()
+
+        if (!binding.checkbox.isChecked) binding.backButton.visibility = View.INVISIBLE
+
         binding.backButton.setOnClickListener(this)
-        binding.statusButton.setOnClickListener(this)
         binding.checkbox.setOnCheckedChangeListener(this)
 
 
     }
+
+
 
     override fun onClick(v: View) {
         when(v.id){
@@ -28,17 +34,25 @@ class CheckBox : AppCompatActivity(), View.OnClickListener, CompoundButton.OnChe
                val backToMain = Intent(this, MainActivity::class.java)
                 startActivity(backToMain)
             }
-            R.id.statusButton ->{
-                if (status) binding.backButton.visibility = View.VISIBLE
-                else binding.backButton.visibility = View.INVISIBLE
-            }
 
             }
 
         }
 
+    //Обработка Чекбокса
     override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {
-        status = isChecked
+        if (isChecked) binding.backButton.visibility = View.VISIBLE
+        else binding.backButton.visibility = View.INVISIBLE
+    }
+
+    private fun writePrompt() {
+        binding.prompt.text = "//Обработка Чекбокса\n" +
+                "    override fun onCheckedChanged(buttonView: CompoundButton?, isChecked: Boolean) {\n" +
+                "        if (isChecked) binding.backButton.visibility = View.VISIBLE\n" +
+                "        else binding.backButton.visibility = View.INVISIBLE\n" +
+                "    }//интерфейсы на OnClickListener и OnCheckedChangeListener\n" +
+                "class CheckBox : AppCompatActivity(), View.OnClickListener, CompoundButton.OnCheckedChangeListener" +
+                ""
     }
 
 }
