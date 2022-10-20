@@ -27,6 +27,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         binding.radiobutton.setOnClickListener(this)
         binding.slider.setOnClickListener(this)
         binding.rangeSlider.setOnClickListener(this)
+        binding.textField.setOnClickListener(this)
+        binding.soundEffect.setOnClickListener(this)
 
 
 
@@ -63,6 +65,16 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
             R.id.rangeSlider -> {
                 val startRangeSlider = Intent(this, RangeSlider::class.java)
                 startActivity(startRangeSlider)
+            }
+
+            R.id.textField -> {
+                val startTextField = Intent(this, TextField::class.java)
+                startActivity(startTextField)
+            }
+
+            R.id.soundEffect -> {
+                val startSoundEffect = Intent(this, SoundEffect::class.java)
+                startActivity(startSoundEffect)
             }
         }
     }

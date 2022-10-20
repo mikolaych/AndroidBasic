@@ -72,6 +72,29 @@
         android:textColor="@color/black"
         app:layout_constraintTop_toBottomOf="@+id/slider" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/textField"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:text="TextField"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/rangeSlider" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/soundEffect"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/yellow"
+        android:text="SoundEffect"
+        android:layout_marginTop="5dp"
+        android:padding="3dp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toBottomOf="@+id/textField" />
+
+
 
 
 
