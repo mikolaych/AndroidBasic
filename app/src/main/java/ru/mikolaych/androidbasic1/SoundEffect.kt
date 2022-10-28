@@ -14,6 +14,9 @@ class SoundEffect : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
+
+
         binding.backToMain.setOnClickListener(this)
         binding.soundOn.setOnClickListener(this)
         binding.soundOff.setOnClickListener(this)
@@ -21,13 +24,16 @@ class SoundEffect : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun rainSoundActivate(activate:Boolean){
-        var sound = MediaPlayer.create(this, R.raw.rain)
-        if (activate && !sound.isPlaying) sound.start()
-        else if (!activate) {
-            sound.stop()
-            sound.reset()
-            sound.release()
-            sound = null
+        var music = MediaPlayer.create(this, R.raw.rain)
+        if (activate && !music.isPlaying)
+                music.start()
+
+
+        else if (!activate && music.isPlaying) {
+            music.stop()
+            music.reset()
+            music.release()
+            music = null
         }
     }
 
